@@ -17,41 +17,41 @@ import javax.swing.JPanel;
 public class BallPanel extends JPanel implements MouseMotionListener,MouseListener{
 
 	List<Block> blos = new ArrayList<Block>();
-	//�����������ǵ����
+	//星星坐标
 	int []a= new int[1000];
 	int []b=new int[1000];
-	//С������Ʒ�
+	//小球方向和分数
 	int f=0;
     int score=0;
-    //�ؿ�����
+    //关卡
     int mission=1;
-    //��Ϸ״̬���Ʒ�
+    //状态
     int status=1;
-    //������ǿ��Ʒ�
+    //星星个数
     int starflag=0;
-    //��ͣ���Ʒ�
+    //鼠标状态
     int mouseflag=0;
-    //����
+    //初始化挡板
     int x1=200;int w1=200;
 	int y1=500;int h1=20;
 	Baffle baf = new Baffle(x1,y1,w1,h1);
-	//С��
+	//初始化小球
 	int x=200;
-    int y=300;
+        int y=300;
 	int d=50;int speed=2;
 	Ball ba = new Ball(x,y,d,speed);
 	
 
 	
 	public BallPanel() {
-		//���������
+		//添加事件监听和砖块
 		addMouseMotionListener(this);
 		addMouseListener(this);
 		addBlock();
 		}
-	//���ש��
+	//添加砖块
 	public void addBlock(){
-		//�ؿ��ж�
+		//根据关卡生成砖块
 		if(mission==1){
 		for(int i=0;i<3;i++){
 			for(int j=0;j<6;j++){
@@ -83,7 +83,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 	
 		
 
-    //���¿�ʼ
+    //重置游戏
 	private void reStart() {
 		for(int i=blos.size()-1;i>=0;i--){
 			blos.remove(i);
@@ -99,7 +99,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 		addBlock();
 		
 	}
-	//��һ��
+	//下一关
 	public void nextMission(){
 		for(int i=0;i<starflag;i++){
 			a[i]=1000;
@@ -119,11 +119,11 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
         
-        //�ж�����Ƿ��ƶ���������
+        //判断鼠标在挡板上
     	if(e.getX()>=baf.x&&e.getX()<=baf.x+baf.w&&e.getY()>=baf.y&&e.getY()<=baf.y+baf.h){
         	mouseflag=0;
         }
-    	//�ƶ����������Ϸ
+    	//
 		if(status==3&&mouseflag==0){
 			startBall();
 			status=1;
@@ -132,7 +132,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 
 		if(mouseflag==0){
 		baf.x=e.getX()-baf.w/2;
-        baf.y=e.getY();
+                baf.y=e.getY();
 		}
 	
 	}
@@ -140,7 +140,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		//�����������һ�ػ����¿�ʼ
+		//判断进入下一关还是重置
 		 if(status==2&&mission!=2){
 			mission++;
 			startBall();
@@ -187,7 +187,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 		new Thread(){
 			public void run() {
 				while(true){
-			    //С����
+			    //小球方向
 		        if(f==0){
 		                ba.x+=ba.speed;
 		                ba.y+=ba.speed;
@@ -216,7 +216,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 		            if(ba.y>=600-50-40){
 		                status=0;
 		                }
-		            //С���뵲����ײ
+		            //碰板得分，增加星星
 		            if ((baf.y-ba.y-50<=0&&baf.y-ba.y-50>=-15)&&ba.x+25>=baf.x&&ba.x+25<=baf.x+200){
 		                if(f==1){
 		                    f=2;
@@ -249,7 +249,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 		                }
 		                
 		            }
-		            //С����ש����ײ
+		            //碰砖块得分
 		            for(int i=0;i<blos.size();i++){
 		            	
 		            	
@@ -272,7 +272,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 		            	}
 		            }
 		           
-		            //��������
+		            //星星移动
 		            for(int i=0;i<starflag;i++){
 		            	b[i]++;
 		            }

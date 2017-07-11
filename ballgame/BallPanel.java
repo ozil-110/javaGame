@@ -12,27 +12,25 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
-
-
 public class BallPanel extends JPanel implements MouseMotionListener,MouseListener{
 
 	List<Block> blos = new ArrayList<Block>();
-	//星星坐标
-	int []a= new int[1000];
-	int []b=new int[1000];
-	//小球方向和分数
-	int f=0;
-    int score=0;
-    //关卡
-    int mission=1;
-    //状态
-    int status=1;
-    //星星个数
-    int starflag=0;
-    //鼠标状态
-    int mouseflag=0;
-    //初始化挡板
-    int x1=200;int w1=200;
+	 //星星坐标
+        int []a= new int[1000];
+        int []b=new int[1000];
+        //小球方向和分数
+        int f=0;
+        int score=0;
+        //关卡
+        int mission=1;
+        //状态
+        int status=1;
+        //星星个数
+        int starflag=0;
+        //鼠标状态
+        int mouseflag=0;
+        //初始化挡板
+        int x1=200;int w1=200;
 	int y1=500;int h1=20;
 	Baffle baf = new Baffle(x1,y1,w1,h1);
 	//初始化小球
@@ -152,12 +150,12 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 			ba.y=y;
 		}else{
 			    reStart();
-				startBall();
-				status=1;
-				baf.x=x1;
-				baf.y=y1;
-				ba.x=x;
-				ba.y=y;
+			    startBall();
+			    status=1;
+			    baf.x=x1;
+			    baf.y=y1;
+			    ba.x=x;
+			    ba.y=y;
 				
 		}
 	}
@@ -188,7 +186,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 			public void run() {
 				while(true){
 			    //小球方向
-		        if(f==0){
+		            if(f==0){
 		                ba.x+=ba.speed;
 		                ba.y+=ba.speed;
 		            }

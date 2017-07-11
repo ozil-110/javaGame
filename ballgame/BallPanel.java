@@ -299,9 +299,9 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 	}
 	@Override
 	public void paint(Graphics g) {
-		super.paint(g);
-		paintScore(g);
-		baf.drawBaffle(g);
+	    super.paint(g);
+	    paintScore(g);
+	    baf.drawBaffle(g);
 	    ba.drawBall(g);
 	    paintBlock(g);
 	    paintStatus(g);
@@ -339,7 +339,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 	}
 	 public void paintStar(Graphics g){
 	        if(starflag>=1){
-	        	for(int i=0;i<starflag+1;i++){
+	        for(int i=0;i<starflag+1;i++){
 	            Font font1=new Font("���Ĳ���",3,100);
 	            int r1=(int) (Math.random()*256);
 	            int g1=(int) (Math.random()*256);
@@ -361,7 +361,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
             g.drawString("����������¿�ʼ��Ϸ",160,350);
         }
         if(status==2&&mission!=2){
-        	 Font font1=new Font("consolas",3,50);
+             Font font1=new Font("consolas",3,50);
              g.setFont(font1);
              g.setColor(Color.red);
              g.drawString("You win!!!",180,250);
@@ -379,8 +379,8 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
              g.drawString("����������¿�ʼ��Ϸ",160,350);
             }
         if(status==3){
-        	mouseflag=1;
-        	 Font font1=new Font("consolas",3,50);
+             mouseflag=1;
+             Font font1=new Font("consolas",3,50);
              g.setFont(font1);
              g.setColor(Color.blue);
              g.drawString("Pause",180,250);

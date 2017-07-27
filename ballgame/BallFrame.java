@@ -10,7 +10,7 @@ public class BallFrame extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(600,100,600,600);
         this.setResizable(true);
-        this.setTitle("´ò×©¿é");
+        this.setTitle("çƒçƒå¤§ä½œæˆ˜");
         this.setLocationRelativeTo(null);
         BallPanel panel=new BallPanel();
         panel.startBall();

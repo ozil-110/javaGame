@@ -340,7 +340,7 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
 	 public void paintStar(Graphics g){
 	        if(starflag>=1){
 	        for(int i=0;i<starflag+1;i++){
-	            Font font1=new Font("���Ĳ���",3,100);
+	            Font font1=new Font("华云彩云",3,100);
 	            int r1=(int) (Math.random()*256);
 	            int g1=(int) (Math.random()*256);
 	            int b1=(int) (Math.random()*256);
@@ -356,27 +356,27 @@ public class BallPanel extends JPanel implements MouseMotionListener,MouseListen
             Font font1=new Font("consolas",3,50);
             g.setFont(font1);
             g.drawString("Game Over",190,250);
-            Font font2=new Font("΢���ź�",3,30);
+            Font font2=new Font("华云彩云",3,30);
             g.setFont(font2);
-            g.drawString("����������¿�ʼ��Ϸ",160,350);
+            g.drawString("游戏失败",160,350);
         }
         if(status==2&&mission!=2){
              Font font1=new Font("consolas",3,50);
              g.setFont(font1);
              g.setColor(Color.red);
              g.drawString("You win!!!",180,250);
-             Font font2=new Font("΢���ź�",3,30);
+             Font font2=new Font("华云彩云",3,30);
              g.setFont(font2);
-             g.drawString("������������һ��",160,350);
+             g.drawString("单击开始",160,350);
             }
         if(status==2&&mission==2){
              Font font1=new Font("consolas",3,50);
              g.setFont(font1);
              g.setColor(Color.red);
              g.drawString("You win!!!",180,250);
-             Font font2=new Font("΢���ź�",3,30);
+             Font font2=new Font("华云彩云",3,30);
              g.setFont(font2);
-             g.drawString("����������¿�ʼ��Ϸ",160,350);
+             g.drawString("游戏胜利",160,350);
             }
         if(status==3){
              mouseflag=1;
